@@ -6,13 +6,13 @@ const { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sig
 const { initializeApp } = require('firebase/app');
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBmsTDH6-zlRAq5KWwLYwabVFzWJoDcaj4",
-  authDomain: "recipehub-007.firebaseapp.com",
-  projectId: "recipehub-007",
-  storageBucket: "recipehub-007.appspot.com",
-  messagingSenderId: "899551153084",
-  appId: "1:899551153084:web:a9fd778f19e4313621f9b9",
-  measurementId: "G-NTVKB08LGH"
+  apiKey: process.env.API_KEY,
+  authDomain: process.env.AUTH_DOMAIN,
+  projectId: process.env.PROJECT_ID,
+  storageBucket: process.env.STORAGE_BUCKET,
+  messagingSenderId: process.env.MESSAGING_SENDER_ID,
+  appId: process.env.APP_ID,
+  measurementId: process.env.MEASUREMENT_ID
 };
 
 const app = express();
@@ -37,7 +37,7 @@ app.use((req, res, next) => {
 const app1 = initializeApp(firebaseConfig);
 
 const PORT = process.env.PORT || 3001;
-const apiKey="c2557369f6f24c7a8b6aff9e1c655476";
+const apiKey = process.env.API_KEY2;
 
 app.post('/signup', async (req, res) => {
   const { email, password } = req.body;
